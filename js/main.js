@@ -1,0 +1,35 @@
+
+// Function for using 'see more' button on homepage
+document.getElementById("gallery-btn").onclick = function() {
+  window.location.href = "gallery.html"
+}
+
+var nContactLink = document.getElementById("nav-contact-link")
+var fContactLink = document.getElementById("footer-contact-link")
+var gNavContactLink = document.getElementById("gallery-nav-contact-link")
+var gFootContactLink = document.getElementById("gallery-footer-contact-link")
+var contactPage = document.getElementById("contact-info-container")
+
+// Functions for opening contact sidebar
+nContactLink.onclick = function() {
+  contactPage.classList.remove('fade-out')
+  contactPage.style.display = "block"
+}
+
+fContactLink.onclick = function() {
+  contactPage.classList.remove('fade-out') 
+  contactPage.style.display = "block"
+}
+
+// Function for smoothly hiding contact info sidebar when clicked
+contactPage.addEventListener("click", function() {
+  const contactPage = document.getElementById("contact-info-container")
+
+  contactPage.classList.add('fade-out')
+
+  // Finishes hiding sidebar after transition
+  contactPage.addEventListener('transitionend', function handler() {
+    contactPage.style.display = "none"
+    contactPage.removeEventListener('transitionend', handler)
+  })
+})
