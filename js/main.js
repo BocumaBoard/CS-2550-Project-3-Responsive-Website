@@ -10,12 +10,11 @@ var contactPage = document.getElementById("contact-info-container")
 
 // Function for opening contact sidebar
 function openSidebar() {
-  contactPage.classList.remove('fade-out') 
+  contactPage.classList.remove('fade-out') // Resets class list if set by previous click
   contactPage.style.display = "block"
 }
 
-fContactLink.onclick = openSidebar
-nContactLink.onclick = openSidebar
+fContactLink.onclick = nContactLink.onclick = openSidebar
   
 // Function for smoothly hiding contact info sidebar when clicked
 contactPage.addEventListener("click", function() {

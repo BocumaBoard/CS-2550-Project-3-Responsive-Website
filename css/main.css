@@ -190,13 +190,9 @@ figcaption {
   animation-duration: 0.8s;
 }
 
-/* Classes for animating contact element fade out */
+/* Class for animating contact element fade out */
 #contact-info-container.fade-out {
   opacity: 0;
-}
-
-#contact-info-container.hidden {
-  display: none;
 }
 
 @keyframes slide {
@@ -205,7 +201,7 @@ figcaption {
   to { transform: translate(0%, 0%)}
 }
 
-#contact-info-container>ul {
+#contact-info-container ul {
   margin-left: 0;
   list-style-position: inside;
 }
