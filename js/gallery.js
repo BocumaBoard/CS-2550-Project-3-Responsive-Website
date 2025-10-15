@@ -8,15 +8,8 @@ function openSidebar() {
 }
 
 // Functions to open contact sidebar from gallery page
-gNavContactLink.onclick = function() {
-  contactPage.classList.remove('fade-out') 
-  contactPage.style.display = "block"
-}
-
-gFootContactLink.onclick = function() {
-  contactPage.classList.remove('fade-out') 
-  contactPage.style.display = "block"
-}
+gNavContactLink.onclick = openSidebar
+gFootContactLink.onclick = openSidebar
 
 contactPage.addEventListener("click", function() {
   const contactPage = document.getElementById("contact-info-container")
