@@ -1,13 +1,14 @@
+
 var contactPage = document.getElementById("contact-info-container")
 var gNavContactLink = document.getElementById("gallery-nav-contact-link")
 var gFootContactLink = document.getElementById("gallery-footer-contact-link")
 
+// Function to open contact sidebar from gallery page
 function openSidebar() {
   contactPage.classList.remove('fade-out') 
   contactPage.style.display = "block"
 }
 
-// Functions to open contact sidebar from gallery page
 gNavContactLink.onclick = openSidebar
 gFootContactLink.onclick = openSidebar
 

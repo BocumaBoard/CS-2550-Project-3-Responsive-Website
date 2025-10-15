@@ -6,8 +6,6 @@ document.getElementById("gallery-btn").onclick = function() {
 
 var nContactLink = document.getElementById("nav-contact-link")
 var fContactLink = document.getElementById("footer-contact-link")
-var gNavContactLink = document.getElementById("gallery-nav-contact-link")
-var gFootContactLink = document.getElementById("gallery-footer-contact-link")
 var contactPage = document.getElementById("contact-info-container")
 
 // Function for opening contact sidebar
@@ -17,6 +15,7 @@ function openSidebar() {
 }
 
 fContactLink.onclick = openSidebar
+nContactLink.onclick = openSidebar
   
 // Function for smoothly hiding contact info sidebar when clicked
 contactPage.addEventListener("click", function() {

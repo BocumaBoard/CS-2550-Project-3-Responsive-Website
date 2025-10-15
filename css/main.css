@@ -207,6 +207,13 @@ figcaption {
 
 #contact-info-container>ul {
   margin-left: 0;
+  list-style-position: inside;
+}
+
+#contact-info-container li {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 footer {
@@ -226,4 +233,17 @@ footer {
   font-size: 0.75em;
   text-decoration: none;
   color: black;
+}
+
+/* Make sidebar wider on smaller screens for better text wrapping */
+@media screen and (max-width: 768px) {
+  #contact-info-container {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #contact-info-container {
+    width: 70%;
+  }
 }
