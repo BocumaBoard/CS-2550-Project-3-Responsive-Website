@@ -10,17 +10,14 @@ var gNavContactLink = document.getElementById("gallery-nav-contact-link")
 var gFootContactLink = document.getElementById("gallery-footer-contact-link")
 var contactPage = document.getElementById("contact-info-container")
 
-// Functions for opening contact sidebar
-nContactLink.onclick = function() {
-  contactPage.classList.remove('fade-out')
-  contactPage.style.display = "block"
-}
-
-fContactLink.onclick = function() {
+// Function for opening contact sidebar
+function openSidebar() {
   contactPage.classList.remove('fade-out') 
   contactPage.style.display = "block"
 }
 
+fContactLink.onclick = openSidebar
+  
 // Function for smoothly hiding contact info sidebar when clicked
 contactPage.addEventListener("click", function() {
   const contactPage = document.getElementById("contact-info-container")
