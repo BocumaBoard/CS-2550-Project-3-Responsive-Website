@@ -13,6 +13,16 @@ in a zero grade, a permanent record on file and possibly immediate failure of th
 
 Reflection:
 
+I stayed pretty close to the wireframe I designed for the site, making a few changes along the way. 
+I didn't realize the assignment required videos until after the wireframe was completed, so those were added on later. 
+The modal image and detail page ideas were scrapped, too; I needed that time to focus on the main project requirements.
+Also, the contact page became a sidebar accessible from both the home and gallery pages—instead of being a whole new page. 
+
+The most difficult element to get working was by far the contact sidebar. I had to learn how
+to animate both its appearance and disappearance smoothly, and I needed to create JavaScript that 
+correctly changed the element's state. 
+
+Overall, I'm satisfied with the work I've done. I'd love to expand the site's functionality beyond this assignment's due date... 
 
 -->
 
@@ -32,8 +42,8 @@ Reflection:
       <h1>Ben's Figure Gallery</h1>
     </header>
     <nav>
-      <a class="nav-links" id="home-link" href="index.html" target="_self">Home</a>
-      <a class="nav-links" id="gallery-link" href="gallery.html" target="_self">Gallery</a>
+      <p class="nav-links" id="nav-home-link">Home</p>
+      <p class="nav-links" id="nav-gallery-link">Gallery</p>
       <p class="nav-links" id="nav-contact-link">Contact</p>
     </nav>
     <section id="main-section">
@@ -54,6 +64,32 @@ Reflection:
         </button>
       </div>
     </section>
+    <section id="gallery-grid-container">
+      <div id="gallery-row1">
+        <img class="gallery-img" id="chihiro" src="img/chihiro.jpg" alt="Chihiro Fujisaki Pop-Up Parade">
+        <img class="gallery-img" id="edward" src="img/edward.jpg" alt="Edward Elric Nendoroid">
+        <img class="gallery-img" id="kaede" src="img/kaede.jpg" alt="Kaede Akamatsu 1/7 Scale">
+        <img class="gallery-img" id="akari" src="img/akari.jpg" alt="Akari Mizunashi Nendoroid">
+      </div>
+
+      <div id=gallery-row2>
+        <img class="gallery-img" id="racingmiku22" src="img/racingmiku22.jpg" alt="Akari Mizunashi Nendoroid">
+        <img class="gallery-img" id="chiaki" src="img/chiaki.jpg" alt="Akari Mizunashi Nendoroid">
+        <img class="gallery-img" id="racingmiku20" src="img/racingmiku20.jpg" alt="Racing Miku 2020 Nendoroid">
+        <img class="gallery-img" id="winry" src="img/winry.jpg" alt="Winry Rockbell Nendoroid">
+      </div>
+      <div id="video-container">
+        <h2 id="video-container-header">Review/Unboxing Videos</h2>
+        <div id=review-videos>
+          <iframe
+            src="https://www.youtube.com/embed/wUEKtl2VoZw">
+          </iframe>
+          <iframe
+            src="https://www.youtube.com/embed/brbFJIlyIqY">  
+          </iframe>
+        </div>
+      </div>
+    </section> 
     <section id="contact-info-container">
       <h2>Contact Info</h2>
       <ul>
@@ -62,8 +98,8 @@ Reflection:
       </ul>
     </section>
     <footer>
-      <a class="footer-links" id="home-link" href="index.html" target="_self">Home</a>
-      <a class="footer-links" id="gallery-link" href="gallery.html" target="_self">Gallery</a>
+      <p class="footer-links" id="footer-home-link">Home</p>
+      <p class="footer-links" id="footer-gallery-link">Gallery</p>
       <p class="footer-links" id="footer-contact-link">Contact</p>
     </footer>
   </main>
