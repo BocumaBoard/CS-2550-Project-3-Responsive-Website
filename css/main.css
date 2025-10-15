@@ -5,6 +5,11 @@
   --global-primary-color: #ccc;
   --global-accent-color: #bbb;
   --global-opacity: 0.6;
+  
+  --global-h1-size: clamp(1.5em, 7.5vw, 2.5em);
+  --global-h2-size: clamp(1.2em, 6vw, 2em);
+  --global-menu-link-size: clamp(0.9em, 4.5vw, 1.5em);
+  --global-p-size: clamp(1.1em, 3vw, 1.1em);
 }
 
 body {
@@ -13,7 +18,7 @@ body {
 
 main {
   display: grid;
-  grid-template: 7.5em 6em auto 4em / auto;
+  grid-template: 8em 6em auto 4em / auto;
   grid-template-areas:
     'header'
     'navBar'
@@ -31,15 +36,17 @@ header {
   justify-content: center;
 }
 
-header>h1 {
-  margin-bottom: 0px;
+header h1 {
+  margin-bottom: 0;
+  margin-right: 1em;
   font-family: var(--global-primary-font);
-  font-size: 2.5em;
+  font-size: var(--global-h1-size);
   text-align: center;
 }
 
 #header-image {
-  margin-right: 2em;
+  margin-left: 1em;
+  margin-right: 1em;
   max-width: 70%;
   max-height: 70%;
 }
@@ -59,7 +66,7 @@ nav {
   transition: 0.4s;
   margin: auto;
   font-family: var(--global-primary-font);
-  font-size: 1.5em;
+  font-size: var(--global-menu-link-size);
   text-decoration: none;
   color: black;
 }
@@ -73,7 +80,7 @@ nav {
 #main-section {
   margin-top: 2.5em;
   margin-bottom: 2.5em;
-  min-height: 37.5em;
+  min-height: 42em;
   height: auto;
   grid-area: mainSection;
 
@@ -162,14 +169,15 @@ figcaption {
   margin-bottom: 0.4em;
   margin-left: 0.4em;
   font-family: var(--global-primary-font);
-  font-size: 2em;
+  font-size: var(--global-h2-size);
 }
+
 
 #main-text>p, #contact-info-container>ul {
   margin-left: 1.4em;
   margin-right: 1.4em;
   font-family: var(--global-secondary-font);
-  font-size: 1.1em;
+  font-size: var(--global-p-size)
 }
 
 #contact-info-container {
