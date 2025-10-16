@@ -10,6 +10,9 @@
   --global-h2-size: clamp(1.2em, 6vw, 2em);
   --global-menu-link-size: clamp(0.9em, 4.5vw, 1.5em);
   --global-p-size: clamp(1.1em, 3vw, 1.1em);
+
+  --global-animation-timing: linear;
+  --global-animation-duration: 1s;
 }
 
 body {
@@ -77,6 +80,18 @@ nav {
   cursor: pointer;
 }
 
+/* Animation used for switching between sections */
+#main-section, #gallery-grid-container {
+  animation-name: fade-in;
+  animation-duration: var(--global-animation-duration);
+  animation-timing-function: var(--global-animation-timing);
+}
+
+@keyframes fade-in {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
 /* Homepage styles */
 #main-section {
   margin-top: 2.5em;
@@ -116,7 +131,6 @@ figcaption {
   margin-top: 1em;
   font-family: var(--global-secondary-font);
   font-size: 0.9em;
-  text-align: center;
 }
 
 #main-img {
@@ -193,8 +207,6 @@ figcaption {
     'galleryRow2'
     'videoContainer'
     'footer';
-
-  transition: 0.5s ease-out;
 }
 
 #gallery-row1 {
@@ -295,7 +307,7 @@ figcaption {
   animation-duration: 0.8s;
 }
 
-/* Class for animating contact element fade out */
+/* Class for animating contact element fade-out */
 #contact-info-container.fade-out {
   opacity: 0;
 }
