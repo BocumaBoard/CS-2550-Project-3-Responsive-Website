@@ -5,7 +5,7 @@
   --global-primary-color: #ccc;
   --global-accent-color: #bbb;
   --global-opacity: 0.6;
-  
+
   --global-h1-size: clamp(1.5em, 7.5vw, 2.5em);
   --global-h2-size: clamp(1.2em, 6vw, 2em);
   --global-menu-link-size: clamp(0.9em, 4.5vw, 1.5em);
@@ -74,22 +74,29 @@ nav {
   color: black;
 }
 
-.nav-links:hover, .footer-links:hover {
+.nav-links:hover,
+.footer-links:hover {
   transition: 0.4s;
   opacity: var(--global-opacity);
   cursor: pointer;
 }
 
 /* Animation used for switching between sections */
-#main-section, #gallery-grid-container {
+#main-section,
+#gallery-grid-container {
   animation-name: fade-in;
   animation-duration: var(--global-animation-duration);
   animation-timing-function: var(--global-animation-timing);
 }
 
 @keyframes fade-in {
-  from { opacity: 0 }
-  to { opacity: 1 }
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
 /* Homepage styles */
@@ -101,23 +108,18 @@ nav {
   grid-area: mainSection;
 
   display: flex;
-  flex: 1;
   justify-content: space-evenly;
   align-items: stretch;
   flex-wrap: wrap;
 }
 
 .main-section-containers {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  flex-basis: 30%;
+  margin: 1.5em;
   background-color: var(--global-accent-color);
 }
 
 figure {
-  margin-left: 0;
-  margin-right: 0;
-  
-  max-width: 26em;
   max-height: 30em;
   box-shadow: var(--global-box-shadow);
 
@@ -141,7 +143,7 @@ figcaption {
 }
 
 #main-text-btn-container {
-  max-width: 26em;
+  /* max-width: 26em; */
   min-height: 20em;
   max-height: 30em;
   box-shadow: var(--global-box-shadow);
@@ -163,13 +165,13 @@ figcaption {
   border: none;
   background-color: tan;
   box-shadow: var(--global-box-shadow);
-  
+
   text-decoration: none;
   color: black;
   font-family: var(--global-primary-font);
   font-size: 1.5em;
   font-weight: bold;
-  
+
   flex-basis: 20%;
 }
 
@@ -179,7 +181,8 @@ figcaption {
   cursor: pointer;
 }
 
-#main-text>h2, #contact-info-container>h2 {
+#main-text>h2,
+#contact-info-container>h2 {
   margin-top: 0.7em;
   margin-bottom: 0.4em;
   margin-left: 0.4em;
@@ -188,7 +191,8 @@ figcaption {
 }
 
 
-#main-text>p, #contact-info-container>ul {
+#main-text>p,
+#contact-info-container>ul {
   margin-left: 1.4em;
   margin-right: 1.4em;
   font-family: var(--global-secondary-font);
@@ -268,7 +272,6 @@ figcaption {
 
 @media screen and (max-width: 1500px) {
   #gallery-grid-container {
-    display: grid;
     grid-template: repeat(3, auto) 4em / auto;
     grid-template-areas:
       'galleryRow1'
@@ -313,9 +316,13 @@ figcaption {
 }
 
 @keyframes slide {
-  from { transform: translate(100%, 0%)}
+  from {
+    transform: translate(100%, 0%)
+  }
 
-  to { transform: translate(0%, 0%)}
+  to {
+    transform: translate(0%, 0%)
+  }
 }
 
 #contact-info-container ul {
