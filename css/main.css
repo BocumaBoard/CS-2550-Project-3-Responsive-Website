@@ -1,24 +1,44 @@
+/* Controls global page styles */
 :root {
+  /* Controls fonts and colors */
   --global-box-shadow: 0.125em 0.125em 0.5em gray;
   --global-primary-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  --global-font-color: black;
   --global-secondary-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   --global-primary-color: #ccc;
   --global-accent-color: #bbb;
   --global-opacity: 0.6;
-
+  --global-transition-speed: 0.4s;
+  /* Controls text sizing */
   --global-h1-size: clamp(1.5em, 7.5vw, 2.5em);
   --global-h2-size: clamp(1.2em, 6vw, 2em);
   --global-menu-link-size: clamp(0.9em, 4.5vw, 1.5em);
   --global-p-size: clamp(1.1em, 3vw, 1.1em);
-
+  /* Controls animation properties */
   --global-animation-timing: linear;
   --global-animation-duration: 1s;
 }
+
+/* IMPROVEMENTS MADE:
+
+  * Edited vertical spacing/margins between elements, such as the space between the navbar
+    and main/gallery section and between the video header and videos, to be more consistent
+  * Modified video iframe sizing to maintain 16:9 aspect ratio at any screen size
+  * Added more comments throughout stylesheet
+  
+*/
 
 body {
   margin: 0;
 }
 
+/* Controls text color */
+.nav-links, .footer-links, h1, h2, p, figcaption, 
+#gallery-btn, #contact-info-container {
+  color: var(--global-font-color);
+}
+
+/* Homepage styles */
 main {
   display: grid;
   grid-template: 8em 6em auto 4em / auto;
@@ -66,17 +86,16 @@ nav {
 }
 
 .nav-links {
-  transition: 0.4s;
+  transition: var(--global-transition-speed);
   margin: auto;
   font-family: var(--global-primary-font);
   font-size: var(--global-menu-link-size);
   text-decoration: none;
-  color: black;
+  
 }
 
-.nav-links:hover,
-.footer-links:hover {
-  transition: 0.4s;
+.nav-links:hover, .footer-links:hover {
+  transition: var(--global-transition-speed);
   opacity: var(--global-opacity);
   cursor: pointer;
 }
@@ -99,10 +118,9 @@ nav {
   }
 }
 
-/* Homepage styles */
 #main-section {
-  margin-top: 2.5em;
-  margin-bottom: 2.5em;
+  margin-top: 3em;
+  margin-bottom: 3em;
   min-height: 42em;
   height: auto;
   grid-area: mainSection;
@@ -115,12 +133,15 @@ nav {
 
 .main-section-containers {
   flex-basis: 30%;
+  min-width: 20em;
+  min-height: 26em;
+  max-height: 30em;
+  /* Margin is set to provide spacing at smaller screen widths */
   margin: 1.5em;
   background-color: var(--global-accent-color);
 }
 
 figure {
-  max-height: 30em;
   box-shadow: var(--global-box-shadow);
 
   display: flex;
@@ -143,23 +164,20 @@ figcaption {
 }
 
 #main-text-btn-container {
-  /* max-width: 26em; */
   min-height: 20em;
-  max-height: 30em;
   box-shadow: var(--global-box-shadow);
 
   display: flex;
   flex-direction: column;
-  flex: 1;
 }
 
-#main-text {
+#main-text-btn-container>#main-text {
   flex-basis: 80%;
 }
 
 #gallery-btn {
-  transition: 0.4s;
-  width: 15em;
+  transition: var(--global-transition-speed);
+  width: 75%;
   margin: auto;
   margin-bottom: 2em;
   border: none;
@@ -167,16 +185,16 @@ figcaption {
   box-shadow: var(--global-box-shadow);
 
   text-decoration: none;
-  color: black;
+  
   font-family: var(--global-primary-font);
-  font-size: 1.5em;
+  font-size: var(--global-menu-link-size);
   font-weight: bold;
 
   flex-basis: 20%;
 }
 
 #gallery-btn:hover {
-  transition: 0.4s;
+  transition: var(--global-transition-speed);
   opacity: var(--global-opacity);
   cursor: pointer;
 }
@@ -199,11 +217,9 @@ figcaption {
   font-size: var(--global-p-size)
 }
 
-/* Image gallery styles */
+/* Image/video gallery styles */
 #gallery-grid-container {
-  margin-top: 2.5em;
   height: auto;
-
   display: none;
   grid-template: repeat(2, 30em) auto 4em / auto;
   grid-template-areas:
@@ -231,7 +247,7 @@ figcaption {
 
 .gallery-img {
   margin: 1em;
-  transition: 0.4s;
+  transition: var(--global-transition-speed);
   max-width: 70%;
   max-height: 70%;
   box-shadow: var(--global-box-shadow);
@@ -242,13 +258,14 @@ figcaption {
   cursor: pointer;
 }
 
+/* Embedded video styles */
 #video-container {
   grid-area: videoContainer;
 }
 
 #video-container h2 {
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: 0;
+  margin-bottom: 1.25em;
   font-family: var(--global-primary-font);
   font-size: var(--global-h2-size);
 
@@ -263,32 +280,16 @@ figcaption {
   justify-content: space-evenly;
 }
 
-#review-videos iframe {
+.iframe-container {
   margin: 2em;
   width: 32em;
-  height: 18em;
-  box-shadow: var(--global-box-shadow);
+  aspect-ratio: 16/9;
 }
 
-@media screen and (max-width: 1500px) {
-  #gallery-grid-container {
-    grid-template: repeat(3, auto) 4em / auto;
-    grid-template-areas:
-      'galleryRow1'
-      'galleryRow2'
-      'videoContainer'
-      'footer';
-  }
-
-  .gallery-img {
-    max-width: 40%;
-    max-height: 40%;
-  }
-
-  #review-videos iframe {
-    max-width: 70%;
-    max-height: 39%;
-  }
+#review-videos iframe {
+  width: 100%;
+  height: 100%;
+  box-shadow: var(--global-box-shadow);
 }
 
 /* Contact sidebar styles */
@@ -315,6 +316,7 @@ figcaption {
   opacity: 0;
 }
 
+/* Animation for contact sidebar */
 @keyframes slide {
   from {
     transform: translate(100%, 0%)
@@ -336,6 +338,7 @@ figcaption {
   white-space: normal;
 }
 
+/* Footer styles */
 footer {
   grid-area: footer;
   background-color: var(--global-accent-color);
@@ -348,11 +351,37 @@ footer {
 
 .footer-links {
   margin: 1.5em;
-  transition: 0.4s;
+  transition: var(--global-transition-speed);
   font-family: var(--global-primary-font);
   font-size: 0.75em;
   text-decoration: none;
-  color: black;
+  
+}
+
+/* Query to change gallery sizing at smaller screen widths */
+@media screen and (max-width: 1500px) {
+  #gallery-grid-container {
+    grid-template: repeat(3, auto) 4em / auto;
+    grid-template-areas:
+      'galleryRow1'
+      'galleryRow2'
+      'videoContainer'
+      'footer';
+  }
+  .gallery-img {
+    max-width: 40%;
+    max-height: 40%;
+  }
+}
+
+/* Query to manage embedded video container and video sizes */
+@media screen and (max-width: 768px) {
+  #review-videos {
+    height: auto;
+  }
+  .iframe-container {
+    width: 70%;
+  }
 }
 
 /* Make sidebar wider on smaller screens for better text wrapping */

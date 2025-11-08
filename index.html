@@ -1,8 +1,8 @@
 <!-- CODE HEADER/DISCLAIMER 
 
-Project:  CS 2550 "Project 3 - Responsive Website"
+Project:  CS 2550 "Project 4 - CSS Theme/Refactor"
 Name: Ben Tiemann
-Submitted: 10/15/25
+Submitted: 11/7/25
 
 I declare that the following source code was written by me, or provided
 by the instructor for this project. I understand that copying source
@@ -11,18 +11,11 @@ or leaving my code on a public web site constitutes cheating.
 I acknowledge that  If I am found in violation of this policy this may result
 in a zero grade, a permanent record on file and possibly immediate failure of the class.
 
-Reflection:
-
-I stayed pretty close to the wireframe I designed for the site, making a few changes along the way. 
-I didn't realize the assignment required videos until after the wireframe was completed, so those were added on later. 
-The modal image and detail page ideas were scrapped, too; I needed that time to focus on the main project requirements.
-Also, the contact page became a sidebar accessible from both the home and gallery pages—instead of being a whole new page. 
-
-The most difficult element to get working was by far the contact sidebar. I had to learn how
-to animate both its appearance and disappearance smoothly, and I needed to create JavaScript that 
-correctly changed the element's state. 
-
-Overall, I'm satisfied with the work I've done. I'd love to expand the site's functionality beyond this assignment's due date... 
+--SELF GRADE--
+REFACTOR CSS-FIX       A 
+CSS THEME              A
+CSS THEME TOGGLE       A
+MOBILE RESPONSIVE      A
 
 -->
 
@@ -45,10 +38,11 @@ Overall, I'm satisfied with the work I've done. I'd love to expand the site's fu
       <p class="nav-links" id="nav-home-link">Home</p>
       <p class="nav-links" id="nav-gallery-link">Gallery</p>
       <p class="nav-links" id="nav-contact-link">Contact</p>
+      <p class="nav-links" id="nav-theme-toggle">Change Theme</p>
     </nav>
     <section id="main-section">
       <figure class="main-section-containers">
-        <img id="main-img" src="/img/akari.jpg" alt="Akari Mizunashi Nendoroid">
+        <img id="main-img" src="img/akari.jpg" alt="Akari Mizunashi Nendoroid">
         <figcaption>Akari Mizunashi Nendoroid</figcaption>
       </figure>
       <div class="main-section-containers" id="main-text-btn-container">
@@ -81,12 +75,16 @@ Overall, I'm satisfied with the work I've done. I'd love to expand the site's fu
       <div id="video-container">
         <h2 id="video-container-header">Review/Unboxing Videos</h2>
         <div id=review-videos>
-          <iframe
-            src="https://www.youtube.com/embed/wUEKtl2VoZw">
-          </iframe>
-          <iframe
-            src="https://www.youtube.com/embed/brbFJIlyIqY">  
-          </iframe>
+          <div class="iframe-container">
+            <iframe title="FigureReviewVideo1"
+              src="https://www.youtube.com/embed/wUEKtl2VoZw">
+            </iframe>
+          </div>
+          <div class="iframe-container">
+            <iframe title="FigureReviewVideo2"
+              src="https://www.youtube.com/embed/brbFJIlyIqY">  
+            </iframe>
+          </div>
         </div>
       </div>
     </section> 
