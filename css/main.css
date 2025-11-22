@@ -1,23 +1,5 @@
-/* Controls global page styles */
-:root {
-  /* Controls fonts and colors */
-  --global-box-shadow: 0.125em 0.125em 0.5em gray;
-  --global-primary-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  --global-font-color: black;
-  --global-secondary-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  --global-primary-color: #ccc;
-  --global-accent-color: #bbb;
-  --global-opacity: 0.6;
-  --global-transition-speed: 0.4s;
-  /* Controls text sizing */
-  --global-h1-size: clamp(1.5em, 7.5vw, 2.5em);
-  --global-h2-size: clamp(1.2em, 6vw, 2em);
-  --global-menu-link-size: clamp(0.9em, 4.5vw, 1.5em);
-  --global-p-size: clamp(1.1em, 3vw, 1.1em);
-  /* Controls animation properties */
-  --global-animation-timing: linear;
-  --global-animation-duration: 1s;
-}
+/* Imports global variables for site theme */
+@import 'variables.css';
 
 /* IMPROVEMENTS MADE:
 
@@ -36,6 +18,15 @@ body {
 .nav-links, .footer-links, h1, h2, p, figcaption, 
 #gallery-btn, #contact-info-container {
   color: var(--global-font-color);
+}
+
+/* Controls p element font sizing */
+#main-text>p,
+#contact-info-container>ul {
+  margin-left: 1.4em;
+  margin-right: 1.4em;
+  font-family: var(--global-secondary-font);
+  font-size: var(--global-p-size)
 }
 
 /* Homepage styles */
@@ -81,7 +72,7 @@ nav {
 
   display: flex;
   flex: 1;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
@@ -206,90 +197,6 @@ figcaption {
   margin-left: 0.4em;
   font-family: var(--global-primary-font);
   font-size: var(--global-h2-size);
-}
-
-
-#main-text>p,
-#contact-info-container>ul {
-  margin-left: 1.4em;
-  margin-right: 1.4em;
-  font-family: var(--global-secondary-font);
-  font-size: var(--global-p-size)
-}
-
-/* Image/video gallery styles */
-#gallery-grid-container {
-  height: auto;
-  display: none;
-  grid-template: repeat(2, 30em) auto 4em / auto;
-  grid-template-areas:
-    'galleryRow1'
-    'galleryRow2'
-    'videoContainer'
-    'footer';
-}
-
-#gallery-row1 {
-  grid-area: galleryRow1;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-#gallery-row2 {
-  grid-area: galleryRow2;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.gallery-img {
-  margin: 1em;
-  transition: var(--global-transition-speed);
-  max-width: 70%;
-  max-height: 70%;
-  box-shadow: var(--global-box-shadow);
-}
-
-.gallery-img:hover {
-  opacity: var(--global-opacity);
-  cursor: pointer;
-}
-
-/* Embedded video styles */
-#video-container {
-  grid-area: videoContainer;
-}
-
-#video-container h2 {
-  margin-top: 0;
-  margin-bottom: 1.25em;
-  font-family: var(--global-primary-font);
-  font-size: var(--global-h2-size);
-
-  display: flex;
-  justify-content: center;
-}
-
-#review-videos {
-  min-height: 20em;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
-.iframe-container {
-  margin: 2em;
-  width: 32em;
-  aspect-ratio: 16/9;
-}
-
-#review-videos iframe {
-  width: 100%;
-  height: 100%;
-  box-shadow: var(--global-box-shadow);
 }
 
 /* Contact sidebar styles */

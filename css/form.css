@@ -1,0 +1,7 @@
+/* Imports global variables for site theme */
+@import 'variables.css';
+
+/* Styles the visitor form and its elements */
+#visitor-form {
+	display: none;
+}

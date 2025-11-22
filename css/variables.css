@@ -1,0 +1,21 @@
+/* This file controls global page styles and is imported into other stylesheets. */
+
+:root {
+  /* Controls fonts and colors */
+  --global-box-shadow: 0.125em 0.125em 0.5em gray;
+  --global-primary-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  --global-font-color: black;
+  --global-secondary-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  --global-primary-color: #ccc;
+  --global-accent-color: #bbb;
+  --global-opacity: 0.6;
+  --global-transition-speed: 0.4s;
+  /* Controls text sizing */
+  --global-h1-size: clamp(1.5em, 7.5vw, 2.5em);
+  --global-h2-size: clamp(1.2em, 6vw, 2em);
+  --global-menu-link-size: clamp(0.9em, 4.5vw, 1.5em);
+  --global-p-size: clamp(1.1em, 3vw, 1.1em);
+  /* Controls animation properties */
+  --global-animation-timing: linear;
+  --global-animation-duration: 1s;
+}

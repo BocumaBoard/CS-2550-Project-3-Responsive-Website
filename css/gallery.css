@@ -1,0 +1,77 @@
+/* Imports global variables for site theme */
+@import 'variables.css';
+
+/* Image/video gallery styles */
+#gallery-grid-container {
+  height: auto;
+  display: none;
+  grid-template: repeat(2, 30em) auto 4em / auto;
+  grid-template-areas:
+    'galleryRow1'
+    'galleryRow2'
+    'videoContainer'
+    'footer';
+}
+
+#gallery-row1 {
+  grid-area: galleryRow1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#gallery-row2 {
+  grid-area: galleryRow2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.gallery-img {
+  margin: 1em;
+  transition: var(--global-transition-speed);
+  max-width: 70%;
+  max-height: 70%;
+  box-shadow: var(--global-box-shadow);
+}
+
+.gallery-img:hover {
+  opacity: var(--global-opacity);
+  cursor: pointer;
+}
+
+/* Embedded video styles */
+#video-container {
+  grid-area: videoContainer;
+}
+
+#video-container h2 {
+  margin-top: 0;
+  margin-bottom: 1.25em;
+  font-family: var(--global-primary-font);
+  font-size: var(--global-h2-size);
+
+  display: flex;
+  justify-content: center;
+}
+
+#review-videos {
+  min-height: 20em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.iframe-container {
+  margin: 2em;
+  width: 32em;
+  aspect-ratio: 16/9;
+}
+
+#review-videos iframe {
+  width: 100%;
+  height: 100%;
+  box-shadow: var(--global-box-shadow);
+}

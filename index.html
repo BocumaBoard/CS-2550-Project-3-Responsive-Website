@@ -1,8 +1,8 @@
 <!-- CODE HEADER/DISCLAIMER 
 
-Project:  CS 2550 "Project 4 - CSS Theme/Refactor"
+Project:  CS 2550 "Project 5 - Form Validation/JS Refactor"
 Name: Ben Tiemann
-Submitted: 11/7/25
+Submitted: 12/5/25
 
 I declare that the following source code was written by me, or provided
 by the instructor for this project. I understand that copying source
@@ -12,10 +12,9 @@ I acknowledge that  If I am found in violation of this policy this may result
 in a zero grade, a permanent record on file and possibly immediate failure of the class.
 
 --SELF GRADE--
-REFACTOR CSS-FIX       A 
-CSS THEME              A
-CSS THEME TOGGLE       A
-MOBILE RESPONSIVE      A
+REFACTOR JS     A / B / C / D / E
+VALIDATION LIBRARY    A / B / C / D / E
+FLEXBOX LAYOUT/FORM HTML    A / B / C / D / E
 
 -->
 
@@ -24,7 +23,10 @@ MOBILE RESPONSIVE      A
 
 <head>
   <title>Ben's Figure Gallery</title>
+  <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/form.css">
   <script src="js/main.js" defer></script>
 </head>
 
@@ -39,6 +41,7 @@ MOBILE RESPONSIVE      A
       <p class="nav-links" id="nav-gallery-link">Gallery</p>
       <p class="nav-links" id="nav-contact-link">Contact</p>
       <p class="nav-links" id="nav-theme-toggle">Change Theme</p>
+      <p class="nav-links" id="nav-form">Log Visit</p>
     </nav>
     <section id="main-section">
       <figure class="main-section-containers">
@@ -95,10 +98,47 @@ MOBILE RESPONSIVE      A
         <li>Email: 10962263@uvu.edu</li>
       </ul>
     </section>
+    <section id="form-section">
+      <form method="" action="POST" id="visitor-form">
+        <label for="name-input">First and Last Name</label>
+        <input type="text" id="name-input">
+
+        <div id="form-address-container">
+          <label for="name-input">Address</label>
+          <input type="text" id="addr-input">
+
+          <label for="name-input">City</label>
+          <input type="text" id="city-input">
+          
+          <label for="name-input">State</label>
+          <input type="text" id="state-input">
+        </div>
+
+        <div id="form-contact-container">
+          <label for="phone-input">Cell Phone</label>
+          <input type="text" id="phone-input">
+
+          <label for="email-input">Email</label>
+          <input type="text" id="email-input">
+        </div>
+
+        <div id="form-checkbox-container">
+          <label for="internet-check">Internet</label>
+          <input type="checkbox" id="internet-check">
+          <label for="google-check">Google</label>
+          <input type="checkbox" id="google-check">
+          <label for="friend-check">A Friend</label>
+          <input type="checkbox" id="friend-check">
+        </div>
+
+        <button type="submit" id="submitBtn">Submit</button> 
+      </form>
+    </section>
     <footer>
       <p class="footer-links" id="footer-home-link">Home</p>
       <p class="footer-links" id="footer-gallery-link">Gallery</p>
       <p class="footer-links" id="footer-contact-link">Contact</p>
+      <p class="footer-links" id="footer-form">Log Visit</p>
     </footer>
   </main>
 </body>
