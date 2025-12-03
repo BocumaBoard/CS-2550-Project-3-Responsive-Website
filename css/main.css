@@ -172,7 +172,7 @@ figcaption {
   margin: auto;
   margin-bottom: 2em;
   border: none;
-  background-color: tan;
+  background-color: var(--global-main-form-btn-color);
   box-shadow: var(--global-box-shadow);
 
   text-decoration: none;
@@ -265,7 +265,7 @@ footer {
   
 }
 
-/* Query to change gallery sizing at smaller screen widths */
+/* Query to change gallery/form sizing at smaller screen widths */
 @media screen and (max-width: 1500px) {
   #gallery-grid-container {
     grid-template: repeat(3, auto) 4em / auto;

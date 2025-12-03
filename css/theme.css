@@ -4,6 +4,7 @@
   --global-font-color: lime;
   --global-primary-color: #3b3939;  
   --global-accent-color: #2d2a2a;
+  --global-main-form-btn-color: #bbb;
   --global-box-shadow: 0.125em 0.125em 0.25em lime;  
   --global-opacity: 1;
   --global-transition-speed: 0.4s;
@@ -24,11 +25,6 @@
 
 .nav-links:hover, .footer-links:hover {
   color: #d15918;
-}
-
-#gallery-btn {
-  color: black;
-  background-color: #bbb;
 }
 
 #gallery-btn, #main-img, .iframe-container {

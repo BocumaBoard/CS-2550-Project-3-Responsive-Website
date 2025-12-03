@@ -8,13 +8,17 @@
   --global-secondary-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   --global-primary-color: #ccc;
   --global-accent-color: #bbb;
+  --global-main-form-btn-color: tan;
   --global-opacity: 0.6;
   --global-transition-speed: 0.4s;
   /* Controls text sizing */
   --global-h1-size: clamp(1.5em, 7.5vw, 2.5em);
   --global-h2-size: clamp(1.2em, 6vw, 2em);
-  --global-menu-link-size: clamp(0.9em, 4.5vw, 1.5em);
+  --global-menu-link-size: clamp(0.9em, 3.75vw, 1.5em);
   --global-p-size: clamp(1.1em, 3vw, 1.1em);
+  /* Controls container sizing */
+  --global-main-form-min-height: 42em;
+  --global-main-form-margin: 3em;
   /* Controls animation properties */
   --global-animation-timing: linear;
   --global-animation-duration: 1s;

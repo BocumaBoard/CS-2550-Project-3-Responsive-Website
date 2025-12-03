@@ -1,7 +1,109 @@
 /* Imports global variables for site theme */
 @import 'variables.css';
 
+
+#form-section {
+  margin-top: var(--global-main-form-margin);
+	margin-bottom: var(--global-main-form-margin);
+	min-height: calc(var(--global-main-form-min-height) + 9em);
+  height: auto;
+
+	display: none;
+	justify-content: center;
+}
+
+/* Styles the div around the form */
+#form-container {
+	min-height: 26em;
+	width: 40em;
+	padding: 1.5em;
+	background-color: var(--global-accent-color);
+	box-shadow: var(--global-box-shadow);
+}
+
+#form-header-wrapper, #form-widgets-wrapper {
+	width: 100%;
+}
+
+#form-header-wrapper h2 {
+	text-align: center;
+	font-family: var(--global-primary-font);
+	font-size: var(--global-h2-size);
+	color: var(--global-font-color);
+}
+
 /* Styles the visitor form and its elements */
 #visitor-form {
-	display: none;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+/* Styles the form rows */
+.form-row {
+	/* Sets vertical margins to be smaller than horizontal margins */
+	margin: 0.75em 0em;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Styles input label and checkbox question */
+.form-row label, #form-checkbox-text {
+	font-family: var(--global-primary-font);
+	font-size: var(--global-p-size);
+	color: var(--global-font-color);
+	font-weight: bold;
+}
+
+#form-checkbox-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#form-checkbox-text {
+	padding-bottom: 0.75em;
+}
+
+/* Styles text input widgets */
+.form-row input[type="text"] {
+	height: 2em;
+	width: clamp(15em, 60%, 60%);
+	box-shadow: var(--global-box-shadow);
+	background-color: #f9f1f1;
+}
+
+/* Styles the submit button */
+#submitBtn {
+	transition: var(--global-transition-speed);
+	width: 50%;
+	margin: auto;
+	margin-top: calc(var(--global-main-form-margin) * 0.5);
+	margin-bottom: calc(var(--global-main-form-margin) * 0.5);
+	border: none;
+
+	background-color: var(--global-main-form-btn-color);
+  box-shadow: var(--global-box-shadow);
+
+  text-decoration: none;
+  font-family: var(--global-primary-font);
+  font-size: var(--global-menu-link-size);
+  font-weight: bold;
+
+  flex-basis: 20%;
+}
+
+#submitBtn:hover {
+	transition: var(--global-transition-speed);
+	opacity: var(--global-opacity);
+	cursor: pointer;
+}
+
+/* Media query to resize form at smaller screen widths */
+@media screen and (max-width: 1500px) {
+	#form-container {
+    width: 60%;
+  }
 }

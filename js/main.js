@@ -1,4 +1,3 @@
-// FIXME change indent size to 4 spaces
 
 // ============================================================================
 // HOME SECTION
@@ -10,7 +9,7 @@ var fHomeLink = document.getElementById('footer-home-link')
 function returnHome() {
 	mainSection.style.display = 'flex'
 	imageGallery.style.display = 'none'
-	visitorForm.style.display = 'none'
+	formSection.style.display = 'none'
 }
 
 nHomeLink.addEventListener('click', returnHome)
@@ -29,7 +28,7 @@ var galleryLinks = [
 function openGallery() {
 	imageGallery.style.display = 'grid'
 	mainSection.style.display = 'none'
-	visitorForm.style.display = 'none'
+	formSection.style.display = 'none'
 }
 
 for (let elem of galleryLinks) {
@@ -63,12 +62,12 @@ contactPage.addEventListener('click', function() {
 // ============================================================================
 // VISITOR FORM SECTION
 // ============================================================================
-var visitorForm = document.getElementById('visitor-form')
+var formSection = document.getElementById('form-section')
 var formHeaderLink = document.getElementById('nav-form')
 var footHeaderLink = document.getElementById('footer-form')
 
 function openVisitorForm() {
-	visitorForm.style.display = 'flex'
+	formSection.style.display = 'flex'
 	mainSection.style.display = 'none'
 	imageGallery.style.display = 'none'
 }
