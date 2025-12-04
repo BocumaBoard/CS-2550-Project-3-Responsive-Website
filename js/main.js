@@ -1,3 +1,7 @@
+// Initializes form validation 
+document.addEventListener('DOMContentLoaded', function() {
+	initValidation('visitor-form')
+})
 
 // ============================================================================
 // HOME SECTION

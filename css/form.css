@@ -5,7 +5,7 @@
 #form-section {
   margin-top: var(--global-main-form-margin);
 	margin-bottom: var(--global-main-form-margin);
-	min-height: calc(var(--global-main-form-min-height) + 9em);
+	min-height: calc(var(--global-main-form-min-height) + 12em);
   height: auto;
 
 	display: none;
@@ -16,7 +16,7 @@
 #form-container {
 	min-height: 26em;
 	width: 40em;
-	padding: 1.5em;
+	padding: 1.5em 3em;
 	background-color: var(--global-accent-color);
 	box-shadow: var(--global-box-shadow);
 }
@@ -58,6 +58,14 @@
 	font-weight: bold;
 }
 
+/* Styles text input widgets */
+.form-row input[type="text"] {
+	height: 2em;
+	width: clamp(15em, 60%, 60%);
+	box-shadow: var(--global-box-shadow);
+	background-color: #f9f1f1;
+}
+
 #form-checkbox-container {
 	display: flex;
 	flex-wrap: wrap;
@@ -67,12 +75,18 @@
 	padding-bottom: 0.75em;
 }
 
-/* Styles text input widgets */
-.form-row input[type="text"] {
-	height: 2em;
-	width: clamp(15em, 60%, 60%);
-	box-shadow: var(--global-box-shadow);
-	background-color: #f9f1f1;
+input.was-validated:invalid {
+	color: red;
+	border: 1px solid red;
+}
+
+input.was-validated:invalid ~ div {
+	display: block;
+}
+
+/* Hides all error divs unless input WAS validated */
+input:invalid ~ div, input:valid ~ div {
+	display: none;
 }
 
 /* Styles the submit button */

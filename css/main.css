@@ -91,9 +91,10 @@ nav {
   cursor: pointer;
 }
 
-/* Animation used for switching between sections */
+/* Animation used for switching between site sections */
 #main-section,
-#gallery-grid-container {
+#gallery-grid-container,
+#form-section {
   animation-name: fade-in;
   animation-duration: var(--global-animation-duration);
   animation-timing-function: var(--global-animation-timing);
